@@ -8,3 +8,4 @@
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
 *.h5 filter=lfs diff=lfs merge=lfs -text
+fastapi-disease-detection/02_CNN_VGG19.h5 filter=lfs diff=lfs merge=lfs -text
