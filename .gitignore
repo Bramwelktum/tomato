@@ -20,3 +20,4 @@ yarn-error.log
 /.vscode
 /.zed
 fastapi-disease-detection/venv
+fastapi-disease-detection/new_venv
