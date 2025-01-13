@@ -1,0 +1,141 @@
+{
+    "diseases": [
+      {
+        "name": "Tomato Bacterial Spot",
+        "description": {
+          "english": "Bacterial spot causes small, water-soaked, circular spots on leaves, stems, and fruits.",
+          "kiswahili": "Madoa ya bakteria husababisha madoa madogo, yenye unyevunyevu kwenye majani, shina, na matunda."
+        },
+        "recommendations": {
+          "english": {
+            "remedy": "Apply Ridomil Gold, Copper-based fungicides.",
+            "other": "Ensure proper crop rotation, avoid overhead watering, and space plants to allow airflow."
+          },
+          "kiswahili": {
+            "remedy": "Tumia Ridomil Gold, dawa za kuua fangasi zenye madini ya shaba.",
+            "other": "Hakikisha mzunguko sahihi wa mazao, epuka kumwagilia juu, na panga mimea ili kuruhusu mtiririko wa hewa."
+          }
+        }
+      },
+      {
+        "name": "Tomato Early Blight",
+        "description": {
+          "english": "Early blight causes dark, concentric rings on older leaves, stems, and fruits.",
+          "kiswahili": "Madoa ya blaiti ya mapema husababisha madoa meusi yenye mistari kwenye majani, shina, na matunda ya zamani."
+        },
+        "recommendations": {
+          "english": {
+            "remedy": "Use Dithane M45, Copper-based fungicides.",
+            "other": "Remove infected plant debris, rotate crops, and avoid overcrowding plants."
+          },
+          "kiswahili": {
+            "remedy": "Tumia Dithane M45, dawa za kuua fangasi zenye madini ya shaba.",
+            "other": "Ondoa mabaki ya mimea iliyoambukizwa, panda kwa mzunguko, na epuka msongamano wa mimea."
+          }
+        }
+      },
+      {
+        "name": "Tomato Late Blight",
+        "description": {
+          "english": "Late blight causes large, water-soaked lesions on leaves, stems, and fruits.",
+          "kiswahili": "Blaiti ya mwishoni husababisha madoa makubwa, yenye unyevunyevu kwenye majani, shina, na matunda."
+        },
+        "recommendations": {
+          "english": {
+            "remedy": "Use Ridomil Gold, Fungicides such as Curzate.",
+            "other": "Destroy infected plants, apply mulch, and monitor weather conditions for disease spread."
+          },
+          "kiswahili": {
+            "remedy": "Tumia Ridomil Gold, dawa za kuua fangasi kama vile Curzate.",
+            "other": "Haribu mimea iliyoathirika, weka matandazo, na fuatilia hali ya hewa ili kudhibiti kuenea kwa ugonjwa."
+          }
+        }
+      },
+      {
+        "name": "Tomato Leaf Mold",
+        "description": {
+          "english": "Leaf mold causes pale yellow spots on the upper surface of leaves and gray mold on the underside.",
+          "kiswahili": "Kuvu ya majani husababisha madoa ya njano kwenye uso wa juu wa majani na ukungu wa kijivu chini."
+        },
+        "recommendations": {
+          "english": {
+            "remedy": "Use Mancozeb, Chlorothalonil-based fungicides.",
+            "other": "Ventilate greenhouses, avoid overhead watering, and space plants properly."
+          },
+          "kiswahili": {
+            "remedy": "Tumia Mancozeb, dawa za kuua fangasi zenye Chlorothalonil.",
+            "other": "Peperusha hewa vizuri kwenye greenhouses, epuka kumwagilia juu, na panga mimea vizuri."
+          }
+        }
+      },
+      {
+        "name": "Tomato Septoria Leaf Spot",
+        "description": {
+          "english": "Septoria leaf spot causes small, circular spots with dark borders on leaves.",
+          "kiswahili": "Doa la majani la Septoria husababisha madoa madogo, yenye mistari yenye giza kwenye majani."
+        },
+        "recommendations": {
+          "english": {
+            "remedy": "Apply copper-based fungicides like Kocide 3000.",
+            "other": "Remove infected leaves, use drip irrigation, and practice crop rotation."
+          },
+          "kiswahili": {
+            "remedy": "Tumia dawa za kuua fangasi zenye madini ya shaba kama Kocide 3000.",
+            "other": "Ondoa majani yaliyoambukizwa, tumia umwagiliaji wa matone, na fanya mzunguko wa mazao."
+          }
+        }
+      },
+      {
+        "name": "Tomato Target Spot",
+        "description": {
+          "english": "Target spot causes small, dark lesions with concentric rings on leaves and fruits.",
+          "kiswahili": "Madoa ya lengo husababisha vidonda vidogo, vyenye giza na mistari kwenye majani na matunda."
+        },
+        "recommendations": {
+          "english": {
+            "remedy": "Apply Azoxystrobin, Chlorothalonil-based fungicides.",
+            "other": "Control weeds around plants, ensure proper spacing, and use drip irrigation."
+          },
+          "kiswahili": {
+            "remedy": "Tumia Azoxystrobin, dawa za kuua fangasi zenye Chlorothalonil.",
+            "other": "Dhibiti magugu karibu na mimea, hakikisha nafasi nzuri, na tumia umwagiliaji wa matone."
+          }
+        }
+      },
+      {
+        "name": "Tomato Yellow Leaf Curl Virus",
+        "description": {
+          "english": "This virus causes yellowing and curling of leaves, stunted growth, and reduced fruit production.",
+          "kiswahili": "Virusi hivi husababisha majani kuwa ya njano na kujikunja, ukuaji duni, na uzalishaji mdogo wa matunda."
+        },
+        "recommendations": {
+          "english": {
+            "remedy": "Control whiteflies using Imidacloprid, use insect netting.",
+            "other": "Remove infected plants, rotate crops, and use virus-resistant tomato varieties."
+          },
+          "kiswahili": {
+            "remedy": "Dhibiti inzi weupe kwa kutumia Imidacloprid, tumia wavu wa kuzuia wadudu.",
+            "other": "Ondoa mimea iliyoambukizwa, panda kwa mzunguko, na tumia aina za nyanya zinazostahimili virusi."
+          }
+        }
+      },
+      {
+        "name": "Tomato Mosaic Virus",
+        "description": {
+          "english": "Mosaic virus causes mottled yellow and green patches on leaves, with stunted growth.",
+          "kiswahili": "Virusi vya mosai husababisha madoa ya njano na kijani kwenye majani, na ukuaji duni."
+        },
+        "recommendations": {
+          "english": {
+            "remedy": "No chemical treatment; use resistant varieties and remove infected plants.",
+            "other": "Sanitize tools, avoid handling plants when wet, and rotate crops."
+          },
+          "kiswahili": {
+            "remedy": "Hakuna tiba ya kemikali; tumia aina zinazostahimili na ondoa mimea iliyoambukizwa.",
+            "other": "Safisha zana, epuka kugusa mimea ukiwa umelowa, na panda kwa mzunguko."
+          }
+        }
+      }
+    ]
+  }
+  

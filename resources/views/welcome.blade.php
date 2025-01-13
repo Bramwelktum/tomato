@@ -36,7 +36,7 @@
             <div class="col-lg-3">
                 <div class="d-flex align-items-center justify-content-start">
                     <i class="bi bi-phone-vibrate fs-1 text-primary me-2"></i>
-                    <h2 class="mb-0">+012 345 6789</h2>
+                    <h2 class="mb-0">+254 345 6789</h2>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -110,8 +110,8 @@
                     <img class="w-100" src="img/carousel-1.jpg" alt="Image">
                     <div class="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
                         <div class="text-start p-5" style="max-width: 900px;">
-                            <h3 class="text-white">Organic Vegetables</h3>
-                            <h1 class="display-1 text-white mb-md-4">Organic Vegetables For Healthy Life</h1>
+                            <h3 class="text-white">Detect Now!</h3>
+                            <h1 class="display-1 text-white mb-md-4">Diagnose Your Plants Now</h1>
                             <a href="" class="btn btn-primary py-md-3 px-md-5 me-3">Explore</a>
                             <a href="" class="btn btn-secondary py-md-3 px-md-5">Contact</a>
                         </div>

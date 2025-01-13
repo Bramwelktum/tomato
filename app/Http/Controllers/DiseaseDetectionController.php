@@ -1,11 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use App\Models\DiseaseDetection;
 
 class DiseaseDetectionController extends Controller
 {
@@ -35,19 +36,32 @@ class DiseaseDetectionController extends Controller
             $prediction = [
                 'model1' => ['predicted_class' => 'Error', 'accuracy' => 0],
                 'model2' => ['predicted_class' => 'Error', 'accuracy' => 0],
+                'model3' => ['predicted_class' => 'Error', 'accuracy' => 0],
+                'model4' => ['predicted_class' => 'Error', 'accuracy' => 0],
                 'final_prediction' => ['predicted_disease' => 'Error', 'accuracy' => 0]
             ];
         }
 
-        // Delete the temporary image
-        Storage::disk('public')->delete($path);
-
         // Load the disease details from the JSON file based on the selected language
         $language = $request->input('language');
-        $diseaseDetails = $this->getDiseaseDetails($prediction['final_prediction']['predicted_disease'], $language);
+        $predictedDisease = $prediction['final_prediction']['predicted_disease'];
+        Log::info('Predicted Disease: ' . $predictedDisease);
+        $diseaseDetails = $this->getDiseaseDetails($predictedDisease, $language);
 
         // Log the disease details for debugging
         Log::info('Disease Details: ' . json_encode($diseaseDetails));
+
+        // Save the image path and recommendation details to the database
+        if ($diseaseDetails) {
+            DiseaseDetection::create([
+                'image_path' => $path,
+                'disease_name' => $diseaseDetails['name'],
+                'description' => $diseaseDetails['description'],
+                'remedy' => $diseaseDetails['recommendations']['remedy'],
+                'other_recommendations' => $diseaseDetails['recommendations']['other'],
+                'user_id' => Auth::id()
+            ]);
+        }
 
         // Return the prediction result and disease details to the user
         return view('dashboard', ['prediction' => $prediction, 'diseaseDetails' => $diseaseDetails, 'language' => $language]);
@@ -57,6 +71,8 @@ class DiseaseDetectionController extends Controller
     {
         $json = file_get_contents(storage_path('app/public/recommendation.json'));
         $data = json_decode($json, true);
+
+        Log::info('Looking for disease: ' . $diseaseName);
 
         foreach ($data['diseases'] as $disease) {
             if ($disease['name'] === $diseaseName) {
@@ -70,4 +86,12 @@ class DiseaseDetectionController extends Controller
 
         return null;
     }
+
+    public function history()
+{
+    $user = Auth::user();
+    $diseaseDetections = DiseaseDetection::where('user_id', $user->id)->get();
+
+    return view('history', ['diseaseDetections' => $diseaseDetections]);
+}
 }

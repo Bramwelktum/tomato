@@ -31,7 +31,6 @@
                             <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Submit</button>
                         </div>
                     </form>
-
                     @if (isset($prediction))
                         <div id="predictionModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                             <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
@@ -46,20 +45,30 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">01_cnn_model.h5</td>
+                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">01_cnn_model</td>
                                             <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['model1']['predicted_class'] }}</td>
                                             <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['model1']['accuracy'] }}</td>
                                         </tr>
                                         <tr>
-                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">02_CNN_VGG19.h5</td>
+                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">02_CNN_VGG</td>
                                             <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['model2']['predicted_class'] }}</td>
                                             <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['model2']['accuracy'] }}</td>
                                         </tr>
                                         <tr>
+                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">03_CNN_Inception</td>
+                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['model3']['predicted_class'] }}</td>
+                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['model3']['accuracy'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">04_CNN_EfficientNet</td>
+                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['model4']['predicted_class'] }}</td>
+                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['model4']['accuracy'] }}</td>
+                                        </tr>
+                                        <tr>
                                             <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">Final Prediction</td>
                                             <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['final_prediction']['predicted_disease'] }}</td>
-                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['final_prediction']['accuracy'] }}</td>
-                                        </tr>
+                                            <!-- <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['final_prediction']['accuracy'] }}</td> -->
+                                        </tr>                                        
                                     </tbody>
                                 </table>
                                 <div class="mt-4 flex justify-center">
@@ -68,7 +77,6 @@
                             </div>
                         </div>
                     @endif
-
                     @if (isset($diseaseDetails))
                         <div id="detailsModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" style="display: none;">
                             <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
@@ -82,13 +90,12 @@
                             </div>
                         </div>
                     @endif
-
-                    @if (isset($diseaseDetails))
+                    <!-- @if (isset($diseaseDetails))
                         <div id="chatbotModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" style="display: none;">
                             <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                                 <h3 class="text-lg font-semibold mb-4">Chat with our Expert</h3>
                                 <div id="chatbox" class="border border-gray-300 p-4 mb-4 h-64 overflow-y-scroll">
-                                    <!-- Chat messages will be appended here -->
+                                  
                                 </div>
                                 <div class="flex">
                                     <input type="text" id="userMessage" class="flex-1 border border-gray-300 p-2 rounded-l-lg" placeholder="Type your message...">
@@ -99,7 +106,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
+                    @endif -->
                 </div>
             </div>
         </div>
@@ -128,54 +135,53 @@
         }
 
         function sendMessage() {
-    const userMessage = document.getElementById('userMessage').value;
-    if (userMessage.trim() === '') return;
+            const userMessage = document.getElementById('userMessage').value;
+            if (userMessage.trim() === '') return;
 
-    // Append user message to chatbox
-    const chatbox = document.getElementById('chatbox');
-    const userMessageElement = document.createElement('div');
-    userMessageElement.className = 'text-right mb-2';
-    userMessageElement.textContent = userMessage;
-    chatbox.appendChild(userMessageElement);
+            // Append user message to chatbox
+            const chatbox = document.getElementById('chatbox');
+            const userMessageElement = document.createElement('div');
+            userMessageElement.className = 'text-right mb-2';
+            userMessageElement.textContent = userMessage;
+            chatbox.appendChild(userMessageElement);
 
-    // Clear input
-    document.getElementById('userMessage').value = '';
+            // Clear input
+            document.getElementById('userMessage').value = '';
 
-    // Send message to server
-    fetch('{{ route('chatbot') }}', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-        },
-        body: JSON.stringify({ message: userMessage, disease: '{{ $diseaseDetails['name'] ?? '' }}' })
-    })
-    .then(response => {
-        console.log('Response status:', response.status);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+            // Send message to server
+            fetch('{{ route('chatbot') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({ message: userMessage, disease: '{{ $diseaseDetails['name'] ?? '' }}' })
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Append bot response to chatbox
+                const botMessageElement = document.createElement('div');
+                botMessageElement.className = 'text-left mb-2';
+                botMessageElement.textContent = data.response;
+                chatbox.appendChild(botMessageElement);
+
+                // Scroll to bottom
+                chatbox.scrollTop = chatbox.scrollHeight;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                const errorMessageElement = document.createElement('div');
+                errorMessageElement.className = 'text-left mb-2 text-red-500';
+                errorMessageElement.textContent = 'Error: ' + error.message;
+                chatbox.appendChild(errorMessageElement);
+            });
         }
-        return response.json();
-    })
-    .then(data => {
-        // Append bot response to chatbox
-        const botMessageElement = document.createElement('div');
-        botMessageElement.className = 'text-left mb-2';
-        botMessageElement.textContent = data.response;
-        chatbox.appendChild(botMessageElement);
-
-        // Scroll to bottom
-        chatbox.scrollTop = chatbox.scrollHeight;
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        const errorMessageElement = document.createElement('div');
-        errorMessageElement.className = 'text-left mb-2 text-red-500';
-        errorMessageElement.textContent = 'Error: ' + error.message;
-        chatbox.appendChild(errorMessageElement);
-    });
-}
-
         @if (isset($prediction))
             console.log('Prediction modal should be displayed');
             document.getElementById('predictionModal').style.display = 'flex';

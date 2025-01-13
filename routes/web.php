@@ -24,3 +24,5 @@ require __DIR__.'/auth.php';
 Route::post('/detect-disease', [DiseaseDetectionController::class, 'detectDisease'])->name('detectDisease');
 
 Route::post('/chatbot', [ChatbotController::class, 'handleChat'])->name('chatbot');
+
+Route::get('/history', [DiseaseDetectionController::class, 'history'])->name('history');

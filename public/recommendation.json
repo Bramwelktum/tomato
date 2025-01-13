@@ -1,0 +1,45 @@
+{
+    "recommendations": {
+      "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+        "english": "Remove and destroy infected plants. Use resistant varieties. Control whiteflies with appropriate insecticides.",
+        "kiswahili": "Ondoa na kuharibu mimea iliyoambukizwa. Tumia aina sugu. Dhibiti nzi weupe kwa dawa za wadudu zinazofaa."
+      },
+      "Tomato___Late_blight": {
+        "english": "Apply fungicides like chlorothalonil or copper-based sprays. Remove infected plant parts and avoid overhead irrigation.",
+        "kiswahili": "Tumia dawa za kuua fangasi kama chlorothalonil au dawa za msingi wa shaba. Ondoa sehemu zilizoathirika na epuka umwagiliaji wa juu."
+      },
+      "Tomato___healthy": {
+        "english": "No action required. Continue good agricultural practices to maintain plant health.",
+        "kiswahili": "Hakuna hatua inayohitajika. Endelea na mbinu bora za kilimo kudumisha afya ya mimea."
+      },
+      "Tomato___Bacterial_spot": {
+        "english": "Use copper-based sprays to manage the disease. Avoid working in wet fields and rotate crops with non-host plants.",
+        "kiswahili": "Tumia dawa za msingi wa shaba kudhibiti ugonjwa. Epuka kufanya kazi kwenye mashamba yenye unyevu na badilisha mazao na mimea isiyoathirika."
+      },
+      "Tomato___Tomato_mosaic_virus": {
+        "english": "Remove and destroy infected plants. Wash hands and tools thoroughly before handling healthy plants.",
+        "kiswahili": "Ondoa na kuharibu mimea iliyoambukizwa. Osha mikono na zana vizuri kabla ya kushughulikia mimea yenye afya."
+      },
+      "Tomato___Leaf_Mold": {
+        "english": "Ensure proper air circulation by spacing plants. Apply fungicides like mancozeb or chlorothalonil.",
+        "kiswahili": "Hakikisha mzunguko wa hewa wa kutosha kwa kupangilia nafasi ya mimea. Tumia dawa za kuua fangasi kama mancozeb au chlorothalonil."
+      },
+      "Tomato___Spider_mites Two-spotted_spider_mite": {
+        "english": "Spray plants with water to reduce mite populations. Use miticides or introduce predatory mites for biological control.",
+        "kiswahili": "Nyunyizia mimea maji kupunguza idadi ya chawa. Tumia dawa za kuua chawa au leta chawa wanaokula wadudu kwa udhibiti wa kibiolojia."
+      },
+      "Tomato___Early_blight": {
+        "english": "Apply fungicides like azoxystrobin or chlorothalonil. Remove infected leaves and practice crop rotation.",
+        "kiswahili": "Tumia dawa za kuua fangasi kama azoxystrobin au chlorothalonil. Ondoa majani yaliyoathirika na tumia mzunguko wa mazao."
+      },
+      "Tomato___Target_Spot": {
+        "english": "Use fungicides like mancozeb or copper-based sprays. Maintain good field hygiene by removing debris.",
+        "kiswahili": "Tumia dawa za kuua fangasi kama mancozeb au dawa za msingi wa shaba. Dumisha usafi mzuri wa shamba kwa kuondoa uchafu."
+      },
+      "Tomato___Septoria_leaf_spot": {
+        "english": "Remove infected leaves and avoid overhead irrigation. Apply fungicides such as chlorothalonil or copper-based sprays.",
+        "kiswahili": "Ondoa majani yaliyoathirika na epuka umwagiliaji wa juu. Tumia dawa za kuua fangasi kama chlorothalonil au dawa za msingi wa shaba."
+      }
+    }
+  }
+  
