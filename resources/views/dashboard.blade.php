@@ -67,7 +67,7 @@
                                         <tr>
                                             <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">Final Prediction</td>
                                             <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['final_prediction']['predicted_disease'] }}</td>
-                                            <!-- <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['final_prediction']['accuracy'] }}</td> -->
+                                            <td class="py-2 px-4 border-b border-gray-200 dark:border-gray-700">{{ $prediction['final_prediction']['accuracy'] }}</td>
                                         </tr>                                        
                                     </tbody>
                                 </table>
